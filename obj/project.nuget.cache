@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "zMoDQReJUll8vQlRD9SvToE/5E9knII5G2vQOBEk6psckrL0Hct+nhxulSwjPJK/UhzSCZIluStMihUhheiB2g==",
+  "success": true,
+  "projectFilePath": "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/F1TrackerApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/mitchellelse/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/mitchellelse/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/mitchellelse/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/mitchellelse/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/mitchellelse/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/mitchellelse/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
