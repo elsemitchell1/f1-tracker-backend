@@ -14,10 +14,16 @@ namespace F1TrackerApi.Controllers
             _ergastService = ergastService;
         }
 
-        [HttpGet("current")]
+        [HttpGet("currentDriver")]
         public async Task<IActionResult> GetCurrentStandings()
         {
             var data = await _ergastService.GetCurrentStandingsAsync();
+            return Content(data, "application/json");
+        }
+        [HttpGet("currentConstructor")]
+        public async Task<IActionResult> GetCurrentConstructorStandings()
+        {
+            var data = await _ergastService.GetCurrentConstructorStandingsAsync();
             return Content(data, "application/json");
         }
     }

@@ -22,5 +22,15 @@ namespace F1TrackerApi.Services
 
             return await response.Content.ReadAsStringAsync();
         }
+        public async Task<string> GetCurrentConstructorStandingsAsync()
+        {
+            // This calls the Ergast API for current driver standings
+            var url = "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json";
+
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode(); // throws an exception if not 200 OK
+
+            return await response.Content.ReadAsStringAsync();
+        }
     }
 }
