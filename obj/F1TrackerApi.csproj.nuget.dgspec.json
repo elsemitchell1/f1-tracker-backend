@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/F1TrackerApi.csproj": {}
+    "/Users/mitcheeze/Documents/Coding/F1Tracker/f1-tracker-backend/F1TrackerApi.csproj": {}
   },
   "projects": {
-    "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/F1TrackerApi.csproj": {
+    "/Users/mitcheeze/Documents/Coding/F1Tracker/f1-tracker-backend/F1TrackerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/F1TrackerApi.csproj",
+        "projectUniqueName": "/Users/mitcheeze/Documents/Coding/F1Tracker/f1-tracker-backend/F1TrackerApi.csproj",
         "projectName": "F1TrackerApi",
-        "projectPath": "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/F1TrackerApi.csproj",
-        "packagesPath": "/Users/mitchellelse/.nuget/packages/",
-        "outputPath": "/Volumes/Mitch's SSD/Mitch/F1app/F1TrackerApi/obj/",
+        "projectPath": "/Users/mitcheeze/Documents/Coding/F1Tracker/f1-tracker-backend/F1TrackerApi.csproj",
+        "packagesPath": "/Users/mitcheeze/.nuget/packages/",
+        "outputPath": "/Users/mitcheeze/Documents/Coding/F1Tracker/f1-tracker-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mitchellelse/.nuget/NuGet/NuGet.Config"
+          "/Users/mitcheeze/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -32,11 +32,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -62,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
