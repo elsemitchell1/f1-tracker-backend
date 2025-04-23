@@ -1,0 +1,7 @@
+# .NET build artifacts
+bin/
+obj/
+
+appsettings.Development.json
+
+appsettings.json
