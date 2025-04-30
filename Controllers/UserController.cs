@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using F1TrackerApi.DTOs;
 using F1TrackerApi.Data;
 using F1TrackerApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace F1TrackerApi.Controllers
 {
@@ -51,6 +52,19 @@ namespace F1TrackerApi.Controllers
                 .ToList();
 
             return Ok(new { drivers = favoriteDrivers });
+        }
+        [HttpDelete("favorites/{driverName}")]
+        public IActionResult DeleteFavoriteDriver(string driverName){
+            var userId = int.Parse(User.FindFirst("id")?.Value);
+            var favoriteDriver = _context.FavoriteDrivers
+                .FirstOrDefault(fd => fd.UserId == userId && fd.DriverName == driverName);
+            if(favoriteDriver == null){
+                return NotFound(new { message = "Favorite driver not found" });
+            }
+            _context.Database.ExecuteSqlRaw("DELETE FROM FavoriteDrivers WHERE DriverName IS NULL OR DriverName = ''");
+            _context.FavoriteDrivers.Remove(favoriteDriver);
+            _context.SaveChanges();
+            return Ok(new {message = "Favorite driver deleted successfully"});
         }
     }
 }

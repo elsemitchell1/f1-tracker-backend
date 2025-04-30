@@ -37,6 +37,7 @@ namespace F1TrackerApi.Controllers
             // Create a new user
             var user = new User
             {
+                Username = registerDto.Username,
                 Email = registerDto.Email
             };
 
@@ -69,7 +70,7 @@ namespace F1TrackerApi.Controllers
             var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]); // Ensure this key is stored securely in your configuration
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()), new Claim("email", user.Email) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()), new Claim("email", user.Email), new Claim ("username", user.Username) }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])),
@@ -81,6 +82,22 @@ namespace F1TrackerApi.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return Ok(new { token = tokenHandler.WriteToken(token) });
+        }
+        [HttpDelete("delete/{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            // Find the user by ID
+            var user = _context.Users.SingleOrDefault(u => u.Id == id);
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found" });
+            }
+
+            // Remove the user
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            return Ok(new { message = "User deleted successfully" });
         }
     }
 }
